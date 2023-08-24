@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soluton3</title>
+    <style>
+        .hero{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+          
+           
+        }
+        section{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Counter</h1>
+        <section>
+        <button class="increment">+</button>
+        <span>0</span>
+        <button class="decrement">-</button>
+    </section>
+    </div>
+    <script>
+        const Addition=document.querySelector('.increment')
+        const subtract=document.querySelector('.decrement')
+        const counter=document.querySelector('span')
+        
+        Addition.addEventListener('click', () => {
+            console.log(counter.textContent);
+        counter.textContent = parseInt(counter.textContent) + 1;
+      });
+
+      subtract.addEventListener('click', () => {
+        if (parseInt(counter.textContent) > 0) {
+          counter.textContent = parseInt(counter.textContent) - 1;
+        } else {
+          alert('counter boundary is beyond 0');
+        }
+      });
+
+
+    </script>
+    
+</body>
+</html>
