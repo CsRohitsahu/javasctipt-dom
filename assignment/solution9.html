@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1>Login/Logout</h1>
+
+<p id="login-status"></p>
+
+<button id="button1">Login</button>
+<button  id="button2">Logout</button>
+
+<script>
+    document.getElementById('button1').addEventListener('click',login)
+    document.getElementById('button2').addEventListener('click',logout)
+function login() {
+  localStorage.setItem("auth", "true");
+  document.getElementById("login-status").innerHTML = "You are logged in.";
+}
+
+function logout() {
+  localStorage.removeItem("auth");
+  document.getElementById("login-status").innerHTML = "You are logged out.";
+}
+
+if (localStorage.getItem("auth")) {
+  document.getElementById("login-status").innerHTML = "You are logged in.";
+} else {
+  document.getElementById("login-status").innerHTML = "You are logged out.";
+}
+</script>
+
+</body>
+</html>

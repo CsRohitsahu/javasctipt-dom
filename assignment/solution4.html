@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+             width: 300px;
+             margin-left: 20%;
+             gap: 7px;
+             
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            border-radius: 20px;
+            width: 100px;
+        }
+        button:hover{
+            background-color: aliceblue;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <h1>
+            Sign UP Form
+        </h1>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="(minimum 3 characters)">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="enter your email">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="minimum 8 characters">
+        <button>submit</button>
+    </form>
+    
+
+    <script>
+        const form=document.querySelector('form')
+        form.addEventListener('submit',(e)=>{
+          
+            e.preventDefault()
+            
+
+            const name=document.querySelector('#name')
+            const password =document.querySelector("#password")
+
+            if (name.value.length >= 3 && password.value.length >= 8) {
+          alert("Form Validation Successfull !!");
+        } else {
+          alert("Form Validation Failed !!");
+        }
+
+        })
+    </script>
+</body>
+</html>

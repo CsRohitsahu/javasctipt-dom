@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body{
+          
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+        div{
+        color: #f6f4f4;
+        font-size: 3rem;
+        border: 2px solid grey;
+        border-radius: 5px;
+        padding: .4rem;
+        box-shadow: 0px 3px 5px gray  ;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="time-container">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+
+    <script>
+        function timer(){
+            const Time = new Date();
+        const hours = Time.getHours().toString().padStart(2, "0");
+        const minutes =Time.getMinutes().toString().padStart(2, "0");
+        const seconds = Time.getSeconds().toString().padStart(2, "0");
+        const bg-hexCode = `#${hours}${minutes}${seconds}`;
+
+        const Hours= document.getElementById("hours")
+        const Minutes=  document.getElementById("minutes")
+        
+        Seconds= document.getElementById("seconds")
+
+        Hours.textContent = hours;
+      Minutes.textContent = minutes;
+       Seconds.textContent = seconds;
+
+        document.body.style.backgroundColor = bg-hexCode;
+        }
+          setInterval(timer,1000)
+
+
+
+
+    </script>
+    
+</body>
+</html>
